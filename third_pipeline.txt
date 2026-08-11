@@ -3,38 +3,31 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                echo 'Checking out source code...'
-                checkout scm
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'echo Compiling source code'
+                bat 'echo Compiling source code'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'echo All tests passed'
+                bat 'echo All tests passed'
             }
         }
 
         stage('Package') {
             steps {
                 echo 'Packaging the application...'
-                sh 'echo Application packaged successfully'
+                bat 'echo Application packaged successfully'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                sh 'echo Application deployed successfully'
+                bat 'echo Application deployed successfully'
             }
         }
     }
